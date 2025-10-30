@@ -1,16 +1,18 @@
 from flask import Blueprint, request, jsonify
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required
 from services.usuario_services import UsuarioService
 from utils.mensagens_erros import ERROS
 
-usuario_bp = Blueprint('usuario_bp', __name__)
+usuario_bp = Blueprint('usuarios', __name__)
 
 @usuario_bp.route('/usuarios', methods=['GET'])
+@jwt_required()
 def listar_usuarios():
     usuarios = UsuarioService.listar_usuarios()
     return jsonify(usuarios), 200
 
 @usuario_bp.route('/usuarios/<int:id_usuario>', methods=['GET'])
+@jwt_required()
 def buscar_usuario_por_id(id_usuario):
     usuario = UsuarioService.buscar_usuario_por_id(id_usuario)
     if usuario == ERROS["USUARIO_NAO_ENCONTRADO"]:
@@ -24,7 +26,7 @@ def criar_usuario():
 
     if not all(campo in dados for campo in obrigatorios):
         return jsonify({"mensagem": "Campos obrigatórios ausentes."}), 400
-    
+
     resultado = UsuarioService.criar_usuario(
         username=dados["username"],
         nome=dados["nome"],
@@ -38,6 +40,7 @@ def criar_usuario():
 
 
 @usuario_bp.route("/<int:id_usuario>", methods=["PUT"])
+@jwt_required()
 def atualizar_usuario(id_usuario):
     dados = request.get_json()
     resultado = UsuarioService.atualizar_usuario(
@@ -53,6 +56,7 @@ def atualizar_usuario(id_usuario):
 
 
 @usuario_bp.route("/<int:id_usuario>", methods=["DELETE"])
+@jwt_required()
 def deletar_usuario(id_usuario):
     resultado = UsuarioService.deletar_usuario(id_usuario)
     status = resultado.get("status", 200)
