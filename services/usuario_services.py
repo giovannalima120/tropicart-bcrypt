@@ -15,6 +15,11 @@ class UsuarioService:
         return usuario
     
     @staticmethod
+    def buscar_usuario_por_email(email):
+        usuario = UsuarioDAO.get_user_by_email(email)
+        return usuario
+    
+    @staticmethod
     def criar_usuario(username, nome, email, senha, tipo):
         if UsuarioDAO.get_user_by_email(email):
             return ERROS["EMAIL_DUPLICADO"]

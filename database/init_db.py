@@ -1,4 +1,3 @@
-import sqlite3
 from database.connection import get_connection
 
 
@@ -49,5 +48,5 @@ def criar_tabelas():
     conn.commit()
     conn.close()
 
-    if __name__ == '__main__':
-        criar_tabelas()
+if __name__ == '__main__':
+    criar_tabelas()
