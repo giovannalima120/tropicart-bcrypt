@@ -36,7 +36,5 @@ class VagaService:
 
     @staticmethod
     def deletar_vaga(id_vaga):
-        vaga = VagaDAO.buscar_vaga_por_id(id_vaga)
-        if not vaga:
-            return ERROS["VAGA_NAO_ENCONTRADA"]
         VagaDAO.deletar_vaga(id_vaga)
+        return {"message": "Vaga deletada com sucesso", "status": 200}

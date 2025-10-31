@@ -5,13 +5,13 @@ from utils.mensagens_erros import ERROS
 
 usuario_bp = Blueprint('usuarios', __name__)
 
-@usuario_bp.route('/usuarios', methods=['GET'])
+@usuario_bp.route('/', methods=['GET'])
 @jwt_required()
 def listar_usuarios():
     usuarios = UsuarioService.listar_usuarios()
     return jsonify(usuarios), 200
 
-@usuario_bp.route('/usuarios/<int:id_usuario>', methods=['GET'])
+@usuario_bp.route('/<int:id_usuario>', methods=['GET'])
 @jwt_required()
 def buscar_usuario_por_id(id_usuario):
     usuario = UsuarioService.buscar_usuario_por_id(id_usuario)
@@ -46,21 +46,25 @@ def atualizar_usuario(id_usuario):
     resultado = UsuarioService.atualizar_usuario(
         id_usuario=id_usuario,
         nome=dados.get("nome"),
+        username=dados.get("username"),
         email=dados.get("email"),
         senha=dados.get("senha"),
-        categoria=dados.get("categoria")
+        tipo=dados.get("categoria")
     )
 
-    status = resultado.get("status", 200)
-    return jsonify(resultado), status
+    if resultado is None:
+        return jsonify({"message": "Usuário atualizado com sucesso"}), 200
+    return jsonify(resultado), resultado.get("status", 400)
 
 
 @usuario_bp.route("/<int:id_usuario>", methods=["DELETE"])
 @jwt_required()
 def deletar_usuario(id_usuario):
     resultado = UsuarioService.deletar_usuario(id_usuario)
-    status = resultado.get("status", 200)
-    return jsonify(resultado), status
+    if resultado is None:
+        return jsonify({"message": "Usuário deletado com sucesso"}), 200
+
+    return jsonify(resultado), resultado.get("status", 400)
 
 
 

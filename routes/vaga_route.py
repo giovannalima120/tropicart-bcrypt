@@ -21,17 +21,21 @@ def buscar_vaga(id_vaga):
 
 @vaga_bp.route("/", methods=["POST"])
 @jwt_required()
-def criar_empresa():
+def criar_vaga():
     dados = request.get_json()
-    resultado = VagaService.criar_vaga(
+
+    obrigatorios = ["titulo", "salario", "descricao", "requisitos"]
+    if not dados or any(campo not in dados for campo in obrigatorios):
+        return jsonify({"error": "Dados incompletos"}), 400
+    
+    vaga_id = VagaService.criar_vaga(
         titulo=dados["titulo"],
         salario=dados["salario"],
         descricao=dados["descricao"],
         requisitos=dados["requisitos"],
         id_empresa=dados["id_empresa"]
     )
-    status = resultado.get("status", 201)
-    return jsonify(resultado), status
+    return jsonify({"message": "Vaga criada com sucesso", "id_vaga": vaga_id}), 201
 
 
 @vaga_bp.route("/<int:id_vaga>", methods=["PUT"])

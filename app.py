@@ -7,6 +7,7 @@ from routes.usuario_route import usuario_bp
 from routes.artista_route import artista_bp
 from routes.empresa_route import empresa_bp
 from routes.vaga_route import vaga_bp
+from database.init_db import criar_tabelas
 
 app = Flask(__name__)
 
@@ -28,4 +29,5 @@ app.register_blueprint(empresa_bp, url_prefix="/empresas")
 app.register_blueprint(vaga_bp, url_prefix="/vagas")
 
 if __name__ == "__main__":
+    criar_tabelas()
     app.run(debug=True)

@@ -20,13 +20,19 @@ class UsuarioService:
         return usuario
     
     @staticmethod
-    def criar_usuario(username, nome, email, senha, tipo):
+    def buscar_usuario_por_username(username):
+        usuario = UsuarioDAO.get_user_by_username(username)
+        return usuario
+    
+    @staticmethod
+    def criar_usuario(nome, username, email, senha, tipo):
         if UsuarioDAO.get_user_by_email(email):
             return ERROS["EMAIL_DUPLICADO"]
         if UsuarioDAO.get_user_by_username(username):
             return ERROS["USERNAME_DUPLICADO"]
         
-        UsuarioDAO.insert_user(username, nome, email, senha, tipo)
+        user_id = UsuarioDAO.insert_user(nome, username, email, senha, tipo)
+        return user_id
     
     @staticmethod
     def atualizar_usuario(id_usuario, nome, username, email, senha, tipo):

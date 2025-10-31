@@ -2,6 +2,9 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt
 from werkzeug.security import generate_password_hash, check_password_hash
 from services.usuario_services import UsuarioService
+from models.artista import Artista
+from services.artista_service import ArtistaService
+from services.empresa_service import EmpresaService
 
 auth_bp = Blueprint('auth', __name__)
 blacklist = set() 
@@ -20,13 +23,19 @@ def register():
         return jsonify({"error": "Username já cadastrado"}), 409
 
     hashed_password = generate_password_hash(data['senha'])
-    UsuarioService.criar_usuario(
+
+    usuario_id = UsuarioService.criar_usuario(
         username=data['username'],
         nome=data['nome'],
         email=data['email'],
         senha=hashed_password,
         tipo=data['categoria']
     )
+
+    if data['categoria'] == 'artista':
+        novo_artista = Artista(id_usuario=usuario_id, area=data.get("area", "Não informada"))
+        ArtistaService.criar_artista(novo_artista)
+
 
     return jsonify({"message": "Usuário registrado com sucesso"}), 201
 

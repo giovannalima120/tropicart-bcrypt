@@ -3,7 +3,7 @@ from models.artista import Artista
 
 class ArtistaDAO:
     @staticmethod
-    def criar_artista(artista: Artista):
+    def criar_artista(artista):
         conn = get_connection()
         cursor = conn.cursor()
         cursor.execute(

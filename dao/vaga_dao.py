@@ -58,3 +58,16 @@ class VagaDAO:
         )
         conn.commit()
         conn.close()
+
+    @staticmethod
+    def deletar_vaga(id_vaga):
+        conn = get_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            '''
+            DELETE FROM vagas WHERE id_vaga = ?;
+            ''',
+            (id_vaga,)
+        )
+        conn.commit()
+        conn.close()

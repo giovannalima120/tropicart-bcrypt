@@ -1,4 +1,5 @@
 from dao.artista_dao import ArtistaDAO
+from models.artista import Artista
 from utils.mensagens_erros import ERROS
 
 class ArtistaService:
@@ -14,10 +15,11 @@ class ArtistaService:
         return artista
     
     @staticmethod
-    def criar_artista(id_usuario, area):
-        if ArtistaDAO.buscar_artista_por_id(id_usuario):
+    def criar_artista(artista: Artista):
+        if ArtistaDAO.buscar_artista_por_id(artista.id_usuario):
             return ERROS["ARTISTA_JA_EXISTE"]
-        ArtistaDAO.criar_artista(id_usuario, area)
+    
+        ArtistaDAO.criar_artista(artista)
 
     @staticmethod
     def atualizar_artista(id_artista, area):

@@ -14,7 +14,9 @@ class UsuarioDAO:
             (nome, username, email, senha, tipo)
         )
         conn.commit()
+        user_id = cursor.lastrowid
         conn.close()
+        return user_id
 
     @staticmethod
 
@@ -41,9 +43,11 @@ class UsuarioDAO:
             ''',
             (id_usuario,)
         )
-        usuario = dict(cursor.fetchone())
+        resultado = cursor.fetchone()
         conn.close()
-        return usuario
+        if resultado is None:
+            return None
+        return dict(resultado)
     
     @staticmethod
     def get_user_by_username(username):
@@ -55,10 +59,11 @@ class UsuarioDAO:
             ''',
             (username,)
         )
-        usuario = dict(cursor.fetchone())
+        resultado = cursor.fetchone()
         conn.close()
-        return usuario
-    
+        if resultado is None:
+            return None
+        return dict(resultado)
     @staticmethod
     def get_user_by_email(email):
         conn = get_connection()
@@ -69,9 +74,11 @@ class UsuarioDAO:
             ''',
             (email,)
         )
-        usuario = dict(cursor.fetchone())
+        resultado = cursor.fetchone()
         conn.close()
-        return usuario
+        if resultado is None:
+            return None
+        return dict(resultado)
     
     @staticmethod
     def update_user(id_usuario, nome, username, email, senha, tipo):
