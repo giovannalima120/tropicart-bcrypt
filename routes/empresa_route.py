@@ -15,7 +15,7 @@ def listar_empresas():
 @jwt_required()
 def buscar_empresa(id_empresa):
     empresa = EmpresaService.buscar_empresa_por_id(id_empresa)
-    if empresa == ERROS["EMPRESA_NAO_ENCONTRADO"]:
+    if empresa == ERROS["EMPRESA_NAO_ENCONTRADA"]:
         return jsonify(empresa), 404
     return jsonify(empresa), 200
 
