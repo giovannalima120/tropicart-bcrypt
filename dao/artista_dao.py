@@ -15,6 +15,7 @@ class ArtistaDAO:
         )
         conn.commit()
         conn.close()
+        return artista.id_usuario
     
     @staticmethod
     def listar_artistas():
@@ -40,26 +41,12 @@ class ArtistaDAO:
             ''',
             (id_artista,)
         )
-        artista = dict(cursor.fetchone())
+        resultado = cursor.fetchone()
        
         conn.close()
-        if artista is None:
+        if resultado is None:
             return None
-        return dict(artista)
-    
-    @staticmethod
-    def buscar_artista_por_username(username):
-        conn = get_connection()
-        cursor = conn.cursor()
-        cursor.execute(
-            '''
-            SELECT * FROM artistas WHERE username = ?;
-            ''',
-            (username,)
-        )
-        artista = dict(cursor.fetchone())
-        conn.close()
-        return artista
+        return dict(resultado)
     
     
     @staticmethod

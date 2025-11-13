@@ -1,3 +1,4 @@
+from models.artista import Artista
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
 from services.artista_service import ArtistaService
@@ -23,10 +24,8 @@ def buscar_artista(id_artista):
 @jwt_required()
 def criar_artista():
     dados = request.get_json()
-    resultado = ArtistaService.criar_artista(
-        id_usuario=dados["id_usuario"],
-        area=dados["area"]
-    )
+    artista = Artista(id_usuario=dados["id_usuario"], area=dados["area"])
+    resultado = ArtistaService.criar_artista(artista)
     status = resultado.get("status", 201)
     return jsonify(resultado), status
 

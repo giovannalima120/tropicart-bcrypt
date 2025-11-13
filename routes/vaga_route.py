@@ -35,6 +35,10 @@ def criar_vaga():
         requisitos=dados["requisitos"],
         id_empresa=dados["id_empresa"]
     )
+
+    if isinstance(vaga_id, dict) and "status" in vaga_id:
+        return jsonify(vaga_id), vaga_id["status"]
+    
     return jsonify({"message": "Vaga criada com sucesso", "id_vaga": vaga_id}), 201
 
 

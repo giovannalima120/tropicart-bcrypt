@@ -36,7 +36,11 @@ def criar_usuario():
     )
 
     status = resultado.get("status", 201)
-    return jsonify(resultado), status
+
+    if isinstance(resultado, dict) and "status" in resultado:
+        return jsonify(resultado), resultado["status"]
+    
+    return jsonify({"message": "Usuário criado com sucesso", "id": resultado}), status
 
 
 @usuario_bp.route("/<int:id_usuario>", methods=["PUT"])

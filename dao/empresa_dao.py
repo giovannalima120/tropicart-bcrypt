@@ -15,6 +15,7 @@ class EmpresaDAO:
         )
         conn.commit()
         conn.close()
+        return empresa.id_usuario
     
     @staticmethod
     def listar_empresas():
@@ -40,11 +41,11 @@ class EmpresaDAO:
             ''',
             (id_empresa,)
         )
-        empresa = dict(cursor.fetchone())
+        resultado = cursor.fetchone()
         conn.close()
-        if empresa is None:
+        if resultado is None:
             return None
-        return dict(empresa)
+        return dict(resultado)
     
     @staticmethod
     def buscar_empresa_por_cnpj(cnpj):
@@ -54,13 +55,13 @@ class EmpresaDAO:
             '''
             SELECT * FROM empresas WHERE cnpj = ?;
             ''',
-            (cnpj)
+            (cnpj, )
         )
-        empresa = dict(cursor.fetchone())
+        resultado = cursor.fetchone()
         conn.close()
-        if empresa is None:
+        if resultado is None:
             return None
-        return dict(empresa)
+        return dict(resultado)
     
     @staticmethod
     def atualizar_empresa(id_empresa, nome_empresa, cnpj):

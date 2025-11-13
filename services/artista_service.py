@@ -18,8 +18,9 @@ class ArtistaService:
     def criar_artista(artista: Artista):
         if ArtistaDAO.buscar_artista_por_id(artista.id_usuario):
             return ERROS["ARTISTA_JA_EXISTE"]
-    
-        ArtistaDAO.criar_artista(artista)
+
+        artista_id = ArtistaDAO.criar_artista(artista)
+        return {"message": "Artista criado com sucesso", "id": artista_id, "status": 201}
 
     @staticmethod
     def atualizar_artista(id_artista, area):
@@ -27,6 +28,7 @@ class ArtistaService:
         if not artista:
             return ERROS["ARTISTA_NAO_ENCONTRADO"]
         ArtistaDAO.atualizar_artista(id_artista, area)
+        return {"message": "Artista atualizado com sucesso", "status": 200}  
     
     @staticmethod
     def deletar_artista(id_artista):
@@ -34,3 +36,4 @@ class ArtistaService:
         if not artista:
             return ERROS["ARTISTA_NAO_ENCONTRADO"]
         ArtistaDAO.deletar_artista(id_artista)
+        return {"message": "Artista deletado com sucesso", "status": 200}  

@@ -13,8 +13,10 @@ class VagaDAO:
             ''',
             (vaga.titulo, vaga.salario, vaga.descricao, vaga.requisitos, vaga.id_empresa) 
         )
+        vaga_id = cursor.lastrowid
         conn.commit()
         conn.close()
+        return vaga_id
 
     @staticmethod
     def listar_vagas():
@@ -40,11 +42,11 @@ class VagaDAO:
             ''',
             (id_vaga,)
         )
-        vaga = dict(cursor.fetchone())
+        resultado = cursor.fetchone()
         conn.close()
-        if vaga is None:
+        if resultado is None:
             return None
-        return dict(vaga)
+        return dict(resultado)
     
     @staticmethod
     def atualizar_vaga(id_vaga, titulo, salario, descricao, requisitos):

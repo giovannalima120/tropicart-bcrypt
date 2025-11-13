@@ -1,3 +1,4 @@
+from models.empresa import Empresa
 from dao.empresa_dao import EmpresaDAO
 from utils.mensagens_erros import ERROS
 
@@ -14,14 +15,15 @@ class EmpresaService:
         return empresa
     
     @staticmethod
-    def criar_empresa(id_usuario, nome_empresa, cnpj):
-        if EmpresaDAO.buscar_empresa_por_id(id_usuario):
+    def criar_empresa(empresa: Empresa):
+        if EmpresaDAO.buscar_empresa_por_id(empresa.id_usuario):
             return ERROS["EMPRESA_JA_EXISTE"]
         
-        if EmpresaDAO.buscar_empresa_por_cnpj(cnpj):
+        if EmpresaDAO.buscar_empresa_por_cnpj(empresa.cnpj):
             return ERROS["CNPJ_DUPLICADO"]
         
-        EmpresaDAO.criar_empresa(id_usuario, nome_empresa, cnpj)
+        empresa_id = EmpresaDAO.criar_empresa(empresa)
+        return {"message": "Empresa criada com sucesso", "id": empresa_id, "status": 201}
 
     @staticmethod
     def atualizar_empresa(id_empresa, nome_empresa, cnpj):
@@ -30,14 +32,16 @@ class EmpresaService:
             return ERROS["EMPRESA_NAO_ENCONTRADA"]
         
         cnpj_encontrado = EmpresaDAO.buscar_empresa_por_cnpj(cnpj)
-        if cnpj_encontrado and cnpj_encontrado['id_empresa'] != id_empresa:
+        if cnpj_encontrado and cnpj_encontrado['id_usuario'] != id_empresa:
             return ERROS["CNPJ_DUPLICADO"]
         
         EmpresaDAO.atualizar_empresa(id_empresa, nome_empresa, cnpj)
-    
+        return {"message": "Empresa atualizada com sucesso", "status": 200}    
+
     @staticmethod
     def deletar_empresa(id_empresa):
         empresa = EmpresaDAO.buscar_empresa_por_id(id_empresa)
         if not empresa:
             return ERROS["EMPRESA_NAO_ENCONTRADA"]
         EmpresaDAO.deletar_empresa(id_empresa)
+        return {"message": "Empresa deletada com sucesso", "status": 200}

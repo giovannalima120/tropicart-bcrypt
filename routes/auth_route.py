@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt
 from werkzeug.security import generate_password_hash, check_password_hash
 from services.usuario_services import UsuarioService
+from models.empresa import Empresa
 from models.artista import Artista
 from services.artista_service import ArtistaService
 from services.empresa_service import EmpresaService
@@ -33,8 +34,37 @@ def register():
     )
 
     if data['categoria'] == 'artista':
-        novo_artista = Artista(id_usuario=usuario_id, area=data.get("area", "Não informada"))
-        ArtistaService.criar_artista(novo_artista)
+        novo_artista = Artista(
+            id_usuario=usuario_id, 
+            nome=data["nome"], 
+            username=data["username"],
+            email=data["email"],
+            senha=hashed_password,
+            tipo=data["categoria"],               
+            area=data.get("area", "Não informada")
+            )
+        resultado = ArtistaService.criar_artista(novo_artista)
+        if isinstance(resultado, dict) and "status" in resultado and resultado["status"] != 201:
+            return jsonify(resultado), resultado["status"]
+        
+    if data['categoria'] == 'empresa':
+        nova_empresa = Empresa(
+            id_usuario=usuario_id,
+            nome=data["nome"],
+            username=data["username"],
+            email=data["email"],
+            senha=hashed_password,
+            tipo=data["categoria"],
+            nome_empresa=data.get("nome_empresa", "Empresa sem nome"),
+            cnpj=data.get("cnpj", "00000000000000")
+        )
+        
+        resultado = EmpresaService.criar_empresa(nova_empresa)
+
+        if isinstance(resultado, dict) and "status" in resultado and resultado["status"] != 201:
+            return jsonify(resultado), resultado["status"]
+        
+
 
 
     return jsonify({"message": "Usuário registrado com sucesso"}), 201

@@ -64,6 +64,7 @@ class UsuarioDAO:
         if resultado is None:
             return None
         return dict(resultado)
+    
     @staticmethod
     def get_user_by_email(email):
         conn = get_connection()
