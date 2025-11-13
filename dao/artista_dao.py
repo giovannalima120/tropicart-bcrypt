@@ -41,8 +41,11 @@ class ArtistaDAO:
             (id_artista,)
         )
         artista = dict(cursor.fetchone())
+       
         conn.close()
-        return artista
+        if artista is None:
+            return None
+        return dict(artista)
     
     @staticmethod
     def buscar_artista_por_username(username):

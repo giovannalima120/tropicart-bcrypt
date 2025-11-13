@@ -9,7 +9,7 @@ class EmpresaDAO:
         cursor.execute(
             '''
             INSERT INTO empresas (id_usuario, nome_empresa, cnpj)
-            VALUES (?, ?);
+            VALUES (?, ?, ?);
             ''',
             (empresa.id_usuario, empresa.nome_empresa, empresa.cnpj)
         )
@@ -42,7 +42,25 @@ class EmpresaDAO:
         )
         empresa = dict(cursor.fetchone())
         conn.close()
-        return empresa
+        if empresa is None:
+            return None
+        return dict(empresa)
+    
+    @staticmethod
+    def buscar_empresa_por_cnpj(cnpj):
+        conn = get_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            '''
+            SELECT * FROM empresas WHERE cnpj = ?;
+            ''',
+            (cnpj)
+        )
+        empresa = dict(cursor.fetchone())
+        conn.close()
+        if empresa is None:
+            return None
+        return dict(empresa)
     
     @staticmethod
     def atualizar_empresa(id_empresa, nome_empresa, cnpj):

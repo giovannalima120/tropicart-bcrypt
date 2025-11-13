@@ -42,7 +42,9 @@ class VagaDAO:
         )
         vaga = dict(cursor.fetchone())
         conn.close()
-        return vaga
+        if vaga is None:
+            return None
+        return dict(vaga)
     
     @staticmethod
     def atualizar_vaga(id_vaga, titulo, salario, descricao, requisitos):

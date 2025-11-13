@@ -32,7 +32,7 @@ def criar_usuario():
         nome=dados["nome"],
         email=dados["email"],
         senha=dados["senha"],
-        categoria=dados["categoria"]
+        tipo=dados["categoria"]
     )
 
     status = resultado.get("status", 201)
