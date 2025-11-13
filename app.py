@@ -28,6 +28,8 @@ app.register_blueprint(artista_bp, url_prefix="/artistas")
 app.register_blueprint(empresa_bp, url_prefix="/empresas")
 app.register_blueprint(vaga_bp, url_prefix="/vagas")
 
+import os
+
 if __name__ == "__main__":
     criar_tabelas()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port = os.environ.get('PORT', 3000), debug=True)
