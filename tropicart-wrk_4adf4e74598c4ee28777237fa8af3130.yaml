@@ -9,7 +9,7 @@ collection:
     meta:
       id: fld_4a3f66a001be456983a7f462680cb74b
       created: 1761869466603
-      modified: 1761869466603
+      modified: 1763045266795
       sortKey: -1761869466603
     children:
       - url: "{{ _.url }}/auth/register"
@@ -17,7 +17,7 @@ collection:
         meta:
           id: req_5876944aaad4455f8e6b13cc17f4cfc6
           created: 1761869497210
-          modified: 1761872942502
+          modified: 1763047896552
           isPrivate: false
           sortKey: -1761869501012
         method: POST
@@ -25,11 +25,12 @@ collection:
           mimeType: application/json
           text: |-
             {
-              "username": "empresa",
-              "nome": "empresa",
-              "email": "empresa@teste.com",
+              "username": "carol",
+              "nome": "carol",
+              "email": "carol@teste.com",
               "senha": "12345",
-              "categoria": "empresa"
+              "categoria": "artista",
+            	"area": "Pintor"
             }
         headers:
           - name: Content-Type
@@ -49,7 +50,7 @@ collection:
         meta:
           id: req_fcb85f43d70b4f6ab84a4a4a435e45cb
           created: 1761870473196
-          modified: 1761870657301
+          modified: 1763043816700
           isPrivate: false
           sortKey: -1761869500912
         method: POST
@@ -57,8 +58,8 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"email": "gi@teste.com",
-              "senha": "12345"
+            	"email": "empresa@teste.com",
+            	"senha": "12345"
             }
         headers:
           - name: Content-Type
@@ -78,7 +79,7 @@ collection:
         meta:
           id: req_4b58d5c1aec24953af2efa8241d0281d
           created: 1761870491577
-          modified: 1761871544269
+          modified: 1763045133614
           isPrivate: false
           sortKey: -1761869500812
         method: POST
@@ -89,7 +90,7 @@ collection:
           - id: pair_feee5d02414046cdb2765275cb9df2d4
             name: Authorization
             value: Bearer
-              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTg3MTQ4NywianRpIjoiMzAzMjI4ZDEtZDg4NC00N2JlLTk1OWItZjQ3YjdhNGU1YWQ4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3NjE4NzE0ODcsImNzcmYiOiI4MjY1MjViNy1hYWU2LTRhMzgtOTNlYy1hMWI4Y2RhMWQ3MjkiLCJleHAiOjE3NjE4NzUwODd9.pGw65LSh4cZR0yALzfrsm_BCWjHpu5l4Pw_tGAqYZhQ
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0NDQ4OCwianRpIjoiZmZkNTQxMTEtNzY4OS00NTg0LWFhMGYtY2MyMWVjOTExZjU5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDQ0ODgsImNzcmYiOiI0ZGJhNDQ4Yy00YWY4LTRjZTYtYTViNi0wY2NmOTA0MWZlZWYiLCJleHAiOjE3NjMwNDgwODh9.QdnCaF6pfN-dkIlw1zAz9ifSHPmU0ilBgQLuDSta68M
             disabled: false
         settings:
           renderRequestBody: true
@@ -103,7 +104,7 @@ collection:
     meta:
       id: fld_b89abe7c84464284a9da6e9594fd4e37
       created: 1761869472619
-      modified: 1761869472619
+      modified: 1762888037934
       sortKey: -1761869472619
     children:
       - url: "{{ _.url }}/usuarios/"
@@ -111,7 +112,7 @@ collection:
         meta:
           id: req_60c09707f3e640dc8eff4c33c74c1f51
           created: 1761862258048
-          modified: 1761872759996
+          modified: 1763045183311
           isPrivate: false
           sortKey: -1761870523035
         method: GET
@@ -127,7 +128,7 @@ collection:
           - id: pair_7a4d086f4b89439b93d6a9965e1556fb
             name: Authorization
             value: Bearer
-              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTg3Mjc0OCwianRpIjoiODI2ZDk2YjUtMTI4Yi00MDc0LThkZmQtYmE5OTUxNzdhZDY4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NjE4NzI3NDgsImNzcmYiOiJkNWFjZTQ0Ny0xOTZlLTQxNzAtYmViYy04NWE2NTEyZmUzNDkiLCJleHAiOjE3NjE4NzYzNDh9.SL1e88Bb67_kFX6q_zGyBMKhzmqI78B84Cr-UhYg0aI
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0NTE0MCwianRpIjoiMzdiNzAyNDAtNWIxNC00ZTVhLWEzMjktN2MzNDg3MzFlMDQyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDUxNDAsImNzcmYiOiIyODFiYzQzOS03OGRmLTRhMjgtOTk1My01MGE0YzU3YWI0YjciLCJleHAiOjE3NjMwNDg3NDB9.3F5dGQK5Y5cW8Qf_tluZ3LrESPmjZ31dti1TGAqRVRI
             disabled: false
         settings:
           renderRequestBody: true
@@ -142,7 +143,7 @@ collection:
         meta:
           id: req_0530423c63584bbab73812052de92331
           created: 1761862270078
-          modified: 1761872530233
+          modified: 1763042673090
           isPrivate: false
           sortKey: -1761870522935
         method: GET
@@ -153,7 +154,7 @@ collection:
           - id: pair_38abfd71c6d340a4a80912449e8e93cd
             name: Authorization
             value: Bearer
-              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTg3MTYwOSwianRpIjoiYzlkMDk3NDEtYmI4MC00YWMyLWJkNWYtZWY3NjBmNjE3NTMwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3NjE4NzE2MDksImNzcmYiOiJlYTk2OWI0YS0yODA0LTRhNjEtYjc1OS01YjllMmFhYjBmOTYiLCJleHAiOjE3NjE4NzUyMDl9.BHTgqet3HTyZN47Q4XS9fZb61q96qNF_DlmImjeCDtc
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0MjU2MCwianRpIjoiODJhZDU3NzItMjQzYS00NjBkLTgyMDAtNTI1ODg0ZGFmMzQzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3NjMwNDI1NjAsImNzcmYiOiJjMDUxZGE3OC1iMTAzLTQwYzktYjhlNS0xYjEwMjU1ZjhhYTgiLCJleHAiOjE3NjMwNDYxNjB9.Cc37YcaGbIriOSyJPJHCWhtCQhg-zVVk7ZgE0lQ2vss
             disabled: false
         settings:
           renderRequestBody: true
@@ -168,7 +169,7 @@ collection:
         meta:
           id: req_3c01415e8ff44eb48dc2e0688eae5019
           created: 1761871034844
-          modified: 1761871141103
+          modified: 1763041798913
           isPrivate: false
           sortKey: -1761870522835
         method: PUT
@@ -192,7 +193,7 @@ collection:
           - id: pair_6714b999d7f24360a926cd2efc950a3c
             name: Authorization
             value: Bearer
-              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTg3MDY3OSwianRpIjoiZTA4MmVlN2YtYmRlNC00YTdiLWE2MjktZmRhMjJlOGQ3MjI3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjE4NzA2NzksImNzcmYiOiJkODcxZjEwYS02OTNjLTQ3OTMtYjY3YS1jMDAyNDE2ZTg0ZjEiLCJleHAiOjE3NjE4NzQyNzl9.41FULRvDGcgnlQnIBGEuBGc1RHwDa7i3619n4Se17r4
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTg3NjkzMywianRpIjoiMzcyNmE0ZGEtM2FlOS00ZGY1LWFjYTktZmFmYjljZmIzMmFjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3NjE4NzY5MzMsImNzcmYiOiI4N2QxNWFiNy05NTRkLTQyODMtODAyZS05MjZhZTQxMzcyZjEiLCJleHAiOjE3NjE4ODA1MzN9.F1sEaIAx4wIBn6Gj8K5cD8PPTuViOSeROZybYsJ7RB0
             disabled: false
         settings:
           renderRequestBody: true
@@ -202,12 +203,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ _.url }}/usuarios/2"
+      - url: "{{ _.url }}/usuarios/3"
         name: Delete user
         meta:
           id: req_7c19fdf04798422d894fe3dfe35ba1eb
           created: 1761871339286
-          modified: 1761872536564
+          modified: 1763043238696
           isPrivate: false
           sortKey: -1761870522735
         method: DELETE
@@ -218,7 +219,7 @@ collection:
           - id: pair_62cfbd10bd274a3b841cb48802254f9b
             name: Authorization
             value: Bearer
-              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTg3MTYwOSwianRpIjoiYzlkMDk3NDEtYmI4MC00YWMyLWJkNWYtZWY3NjBmNjE3NTMwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3NjE4NzE2MDksImNzcmYiOiJlYTk2OWI0YS0yODA0LTRhNjEtYjc1OS01YjllMmFhYjBmOTYiLCJleHAiOjE3NjE4NzUyMDl9.BHTgqet3HTyZN47Q4XS9fZb61q96qNF_DlmImjeCDtc
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0MjU2MCwianRpIjoiODJhZDU3NzItMjQzYS00NjBkLTgyMDAtNTI1ODg0ZGFmMzQzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3NjMwNDI1NjAsImNzcmYiOiJjMDUxZGE3OC1iMTAzLTQwYzktYjhlNS0xYjEwMjU1ZjhhYTgiLCJleHAiOjE3NjMwNDYxNjB9.Cc37YcaGbIriOSyJPJHCWhtCQhg-zVVk7ZgE0lQ2vss
             disabled: false
         settings:
           renderRequestBody: true
@@ -232,7 +233,7 @@ collection:
     meta:
       id: fld_f62f831d357e4f60a385fd8aac84971f
       created: 1761869491120
-      modified: 1761869491120
+      modified: 1763041437317
       sortKey: -1761869491120
     children:
       - url: "{{ _.url }}/vagas"
@@ -240,7 +241,7 @@ collection:
         meta:
           id: req_39f2d1ba4d32463c9d8e32f31a1805a3
           created: 1761873240998
-          modified: 1761873746543
+          modified: 1763045170862
           isPrivate: false
           sortKey: -1761873243296
         method: GET
@@ -251,7 +252,7 @@ collection:
           - id: pair_a19647af25704e3fb8d60f39894851d6
             name: Authorization
             value: Bearer
-              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTg3Mjc0OCwianRpIjoiODI2ZDk2YjUtMTI4Yi00MDc0LThkZmQtYmE5OTUxNzdhZDY4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NjE4NzI3NDgsImNzcmYiOiJkNWFjZTQ0Ny0xOTZlLTQxNzAtYmViYy04NWE2NTEyZmUzNDkiLCJleHAiOjE3NjE4NzYzNDh9.SL1e88Bb67_kFX6q_zGyBMKhzmqI78B84Cr-UhYg0aI
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0NTE0MCwianRpIjoiMzdiNzAyNDAtNWIxNC00ZTVhLWEzMjktN2MzNDg3MzFlMDQyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDUxNDAsImNzcmYiOiIyODFiYzQzOS03OGRmLTRhMjgtOTk1My01MGE0YzU3YWI0YjciLCJleHAiOjE3NjMwNDg3NDB9.3F5dGQK5Y5cW8Qf_tluZ3LrESPmjZ31dti1TGAqRVRI
             disabled: false
         settings:
           renderRequestBody: true
@@ -266,7 +267,7 @@ collection:
         meta:
           id: req_dbd9d5b664e94507a952d8703030e130
           created: 1761873260073
-          modified: 1761873631179
+          modified: 1763044533089
           isPrivate: false
           sortKey: -1761873243196
         method: POST
@@ -274,11 +275,11 @@ collection:
           mimeType: application/json
           text: |-
             {
-                "id_empresa": 5,
-                "titulo": "Desenvolvedor Python",
-                "salario": 4000,
-                "descricao": "Vaga para backend Python",
-                "requisitos": "Python, Flask, SQL"
+                "id_empresa": 2,
+                "titulo": "Vaga teste",
+                "salario": 1000,
+                "descricao": "Vaga teste",
+                "requisitos": "teste"
             }
         headers:
           - name: Content-Type
@@ -290,7 +291,7 @@ collection:
           - id: pair_265dc018200c4a8cab46c8ea7d609bb0
             name: Authorization
             value: Bearer
-              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTg3Mjc0OCwianRpIjoiODI2ZDk2YjUtMTI4Yi00MDc0LThkZmQtYmE5OTUxNzdhZDY4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NjE4NzI3NDgsImNzcmYiOiJkNWFjZTQ0Ny0xOTZlLTQxNzAtYmViYy04NWE2NTEyZmUzNDkiLCJleHAiOjE3NjE4NzYzNDh9.SL1e88Bb67_kFX6q_zGyBMKhzmqI78B84Cr-UhYg0aI
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0NDQ4OCwianRpIjoiZmZkNTQxMTEtNzY4OS00NTg0LWFhMGYtY2MyMWVjOTExZjU5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDQ0ODgsImNzcmYiOiI0ZGJhNDQ4Yy00YWY4LTRjZTYtYTViNi0wY2NmOTA0MWZlZWYiLCJleHAiOjE3NjMwNDgwODh9.QdnCaF6pfN-dkIlw1zAz9ifSHPmU0ilBgQLuDSta68M
             disabled: false
         settings:
           renderRequestBody: true
@@ -300,12 +301,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ _.url }}/vagas/1"
+      - url: "{{ _.url }}/vagas/2"
         name: Delete vaga
         meta:
           id: req_73ef65dd25724d32a75bebb89c89b6cf
           created: 1761873760719
-          modified: 1761873805400
+          modified: 1763044584110
           isPrivate: false
           sortKey: -1761873243396
         method: DELETE
@@ -316,7 +317,196 @@ collection:
           - id: pair_48c575023c2a4269b15927f6c3b59c30
             name: Authorization
             value: Bearer
-              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTg3Mjc0OCwianRpIjoiODI2ZDk2YjUtMTI4Yi00MDc0LThkZmQtYmE5OTUxNzdhZDY4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NjE4NzI3NDgsImNzcmYiOiJkNWFjZTQ0Ny0xOTZlLTQxNzAtYmViYy04NWE2NTEyZmUzNDkiLCJleHAiOjE3NjE4NzYzNDh9.SL1e88Bb67_kFX6q_zGyBMKhzmqI78B84Cr-UhYg0aI
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0NDQ4OCwianRpIjoiZmZkNTQxMTEtNzY4OS00NTg0LWFhMGYtY2MyMWVjOTExZjU5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDQ0ODgsImNzcmYiOiI0ZGJhNDQ4Yy00YWY4LTRjZTYtYTViNi0wY2NmOTA0MWZlZWYiLCJleHAiOjE3NjMwNDgwODh9.QdnCaF6pfN-dkIlw1zAz9ifSHPmU0ilBgQLuDSta68M
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Artista
+    meta:
+      id: fld_3e9b0ae41bf2476890f9739d5fceec88
+      created: 1763041450576
+      modified: 1763041450576
+      sortKey: -1763041450576
+    children:
+      - url: "{{ _.url }}/artistas"
+        name: Get artistas
+        meta:
+          id: req_88f2a11d8f47408fa3c1b1155b2c8456
+          created: 1763041832820
+          modified: 1763045155341
+          isPrivate: false
+          sortKey: -1763041844893
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_3e0993db9b084585ab2df352dcec1b97
+          - id: pair_2a1d423f56a646c3afd169f64fc2b872
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0NTE0MCwianRpIjoiMzdiNzAyNDAtNWIxNC00ZTVhLWEzMjktN2MzNDg3MzFlMDQyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDUxNDAsImNzcmYiOiIyODFiYzQzOS03OGRmLTRhMjgtOTk1My01MGE0YzU3YWI0YjciLCJleHAiOjE3NjMwNDg3NDB9.3F5dGQK5Y5cW8Qf_tluZ3LrESPmjZ31dti1TGAqRVRI
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/artistas/3"
+        name: Edit artista
+        meta:
+          id: req_6f9062902b874a3d92d14b89b54ada92
+          created: 1763044998355
+          modified: 1763045238646
+          isPrivate: false
+          sortKey: -1763041844993
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"area": "Cantor"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_84b1bd22268a4b6ba2f01069634faf86
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_971e4a55cdf74b34b75b816aedc03d43
+          - id: pair_05155e664dea414989d388189e83dcfe
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0MzgyMSwianRpIjoiY2I2ZDAxN2ItY2EzYS00ZGRmLTgxMzItZTQ3MjFkZTA3ZWQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDM4MjEsImNzcmYiOiIwNjg0YmU0MC1mNTY0LTQ4ZjctODEwOC04ZmIyNzhjMzZiYTYiLCJleHAiOjE3NjMwNDc0MjF9.9KfTqrOZa7siUlxO9j71HWefLR7mZ5fwxLvqFWSgUy0
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/artistas/"
+        name: Delete artista
+        meta:
+          id: req_2a0e90699b8f49f2b743e54caff8bcbe
+          created: 1763045065416
+          modified: 1763045078543
+          isPrivate: false
+          sortKey: -1763041844943
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_51c8bedf54894577a2b5d573d2d883a0
+          - id: pair_7d7791213ad146b9bc1c36209799d22f
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0MzgyMSwianRpIjoiY2I2ZDAxN2ItY2EzYS00ZGRmLTgxMzItZTQ3MjFkZTA3ZWQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDM4MjEsImNzcmYiOiIwNjg0YmU0MC1mNTY0LTQ4ZjctODEwOC04ZmIyNzhjMzZiYTYiLCJleHAiOjE3NjMwNDc0MjF9.9KfTqrOZa7siUlxO9j71HWefLR7mZ5fwxLvqFWSgUy0
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Empresa
+    meta:
+      id: fld_d4a1d43bb8674f18949cbcd2df4c0f49
+      created: 1763041462010
+      modified: 1763041462010
+      sortKey: -1763041462011
+    children:
+      - url: "{{ _.url }}/empresas"
+        name: Get empresas
+        meta:
+          id: req_f5336b283c1a4ddfb8d2fba68a4c8ea7
+          created: 1763042622799
+          modified: 1763043847530
+          isPrivate: false
+          sortKey: -1763042650906
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_6956a367b4c74820ab66f48259131344
+          - id: pair_b801de85c0cf4fd1bfc0621b7fc3f787
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0MzgyMSwianRpIjoiY2I2ZDAxN2ItY2EzYS00ZGRmLTgxMzItZTQ3MjFkZTA3ZWQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDM4MjEsImNzcmYiOiIwNjg0YmU0MC1mNTY0LTQ4ZjctODEwOC04ZmIyNzhjMzZiYTYiLCJleHAiOjE3NjMwNDc0MjF9.9KfTqrOZa7siUlxO9j71HWefLR7mZ5fwxLvqFWSgUy0
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/empresas/2"
+        name: Edit empresa
+        meta:
+          id: req_9fa6efe9be6e4494baf9f2cb3dc0eb9b
+          created: 1763044174718
+          modified: 1763044312647
+          isPrivate: false
+          sortKey: -1763042650806
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"cnpj": "333333333333333",
+            	"nome_empresa": "nome teste"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_84b1bd22268a4b6ba2f01069634faf86
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_971e4a55cdf74b34b75b816aedc03d43
+          - id: pair_05155e664dea414989d388189e83dcfe
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0MzgyMSwianRpIjoiY2I2ZDAxN2ItY2EzYS00ZGRmLTgxMzItZTQ3MjFkZTA3ZWQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDM4MjEsImNzcmYiOiIwNjg0YmU0MC1mNTY0LTQ4ZjctODEwOC04ZmIyNzhjMzZiYTYiLCJleHAiOjE3NjMwNDc0MjF9.9KfTqrOZa7siUlxO9j71HWefLR7mZ5fwxLvqFWSgUy0
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/empresas/2"
+        name: Delete empresa
+        meta:
+          id: req_e97d531ac4c3467481426700b83cdded
+          created: 1763044857782
+          modified: 1763044963394
+          isPrivate: false
+          sortKey: -1763042650956
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_51c8bedf54894577a2b5d573d2d883a0
+          - id: pair_7d7791213ad146b9bc1c36209799d22f
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzA0MzgyMSwianRpIjoiY2I2ZDAxN2ItY2EzYS00ZGRmLTgxMzItZTQ3MjFkZTA3ZWQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NjMwNDM4MjEsImNzcmYiOiIwNjg0YmU0MC1mNTY0LTQ4ZjctODEwOC04ZmIyNzhjMzZiYTYiLCJleHAiOjE3NjMwNDc0MjF9.9KfTqrOZa7siUlxO9j71HWefLR7mZ5fwxLvqFWSgUy0
             disabled: false
         settings:
           renderRequestBody: true
@@ -337,7 +527,7 @@ environments:
   meta:
     id: env_9d592e8a47544c140b317f91c70c5567cc11ddc3
     created: 1761862202997
-    modified: 1761869530788
+    modified: 1763047872931
     isPrivate: false
   data:
-    url: http://127.0.0.1:5000
+    url: https://tropicart-bcrypt.onrender.com
